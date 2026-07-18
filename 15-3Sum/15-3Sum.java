@@ -1,9 +1,9 @@
-// Last updated: 7/18/2026, 2:26:18 PM
+// Last updated: 7/18/2026, 2:27:45 PM
 1class Solution {
 2    public List<List<Integer>> threeSum(int[] nums) {
 3        List<List<Integer>> ll= new ArrayList<>();
 4        Arrays.sort(nums);
-5        for(int i=0;i<nums.length;i++){
+5        for(int i=0;i<nums.length-2;i++){
 6            if(i>0 && nums[i-1]==nums[i]) continue;
 7            int l=i+1;
 8            int r=nums.length-1;
