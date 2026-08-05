@@ -1,4 +1,4 @@
-// Last updated: 8/5/2026, 1:09:10 PM
+// Last updated: 8/5/2026, 1:11:16 PM
 1/*
 2// Definition for a Node.
 3class Node {
@@ -29,21 +29,17 @@
 28        q.add(root);
 29        while(!q.isEmpty()){
 30            int s=q.size();
-31            Queue<Node> q1 = new LinkedList<>();
+31           
 32            for(int i=0;i<s;i++){
 33                Node r1=q.poll();
-34                if(!q.isEmpty()) r1.next=q.peek();
-35                else r1.next=null;
-36                if (r1.left != null)q1.add(r1.left);
-37                if (r1.right != null)q1.add(r1.right);
+34               r1.next=q.peek();
+35                if(i==s-1) r1.next=null;
+36                if (r1.left != null)q.add(r1.left);
+37                if (r1.right != null)q.add(r1.right);
 38            }
-39            while(!q1.isEmpty()){
-40                Node f=q1.poll();
-41                q.add(f);
-42            }
-43        }
-44        return root;
-45        
-46    }
-47    
-48}
+39        }
+40        return root;
+41        
+42    }
+43    
+44}
