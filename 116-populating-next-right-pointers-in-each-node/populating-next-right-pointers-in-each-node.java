@@ -28,17 +28,13 @@ class Solution {
         q.add(root);
         while(!q.isEmpty()){
             int s=q.size();
-            Queue<Node> q1 = new LinkedList<>();
+           
             for(int i=0;i<s;i++){
                 Node r1=q.poll();
-                if(!q.isEmpty()) r1.next=q.peek();
-                else r1.next=null;
-                if (r1.left != null)q1.add(r1.left);
-                if (r1.right != null)q1.add(r1.right);
-            }
-            while(!q1.isEmpty()){
-                Node f=q1.poll();
-                q.add(f);
+               r1.next=q.peek();
+                if(i==s-1) r1.next=null;
+                if (r1.left != null)q.add(r1.left);
+                if (r1.right != null)q.add(r1.right);
             }
         }
         return root;
